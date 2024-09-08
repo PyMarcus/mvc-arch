@@ -1,9 +1,15 @@
 package main 
 
 import (
+	"os"
 	"fmt"
+	"github.com/joho/godotenv"
 )
 
 func main(){
-	fmt.Println("Hello, world!")
+	err := godotenv.Load()
+	if err != nil{
+		fmt.Println("Error ", err)
+	}
+	fmt.Println(os.Getenv("TEST"))
 }
