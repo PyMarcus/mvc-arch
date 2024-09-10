@@ -8,7 +8,7 @@ import (
 type Errs struct {
 	Message string    `json:"message"`
 	Err     string    `json:"error"`
-	Code    int64     `json:"code"`
+	Code    int     `json:"code"`
 	Causes  []*Causes `json:"causes"`
 }
 
@@ -21,7 +21,7 @@ type Causes struct {
 	Message string `json:"message"`
 }
 
-func NewErrs(message, err string, code int64, causes []*Causes) *Errs {
+func NewErrs(message, err string, code int, causes []*Causes) *Errs {
 	return &Errs{
 		message,
 		err,

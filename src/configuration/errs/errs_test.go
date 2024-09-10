@@ -14,7 +14,7 @@ func TestNewErrs(t *testing.T) {
 	err := NewErrs("error message", "some_error", 123, causes)
 
 	assert.NotNil(t, err)
-	assert.Equal(t, err.Code, int64(123))
+	assert.Equal(t, err.Code, int(123))
 	assert.Equal(t, len(causes), 2)
 	assert.Equal(t, err.Err, "some_error")
 
@@ -24,6 +24,6 @@ func TestNewErrs(t *testing.T) {
 
 func TestNewBadRequestError(t *testing.T) {
 	err := NewBadRequestError("bad request")
-	assert.Equal(t, err.Code, int64(400))
+	assert.Equal(t, err.Code, int(400))
 	assert.Equal(t, err.Message, "bad request")
 }
