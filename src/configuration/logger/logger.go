@@ -13,7 +13,7 @@ var (
 )
 
 func init() {
-	logFilePath := "../../logfile.log"
+	logFilePath := "logfile.log"
 	file, err := os.OpenFile(logFilePath, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		fmt.Printf("Erro ao criar arquivo de log: %v\n", err)
